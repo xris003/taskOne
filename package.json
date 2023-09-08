@@ -1,0 +1,23 @@
+{
+  "name": "taskone",
+  "version": "1.0.0",
+  "description": "HNG_taskOne",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xris003/taskOne.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xris003/taskOne/issues"
+  },
+  "homepage": "https://github.com/xris003/taskOne#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
