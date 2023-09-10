@@ -1,24 +1,47 @@
-// App File
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000; // Set the port to 3000 for localhost
 
-app.get("/get-info", (req, res) => {
-  // Get the values of the two GET parameters
-  const param1 = req.query.param1;
-  const param2 = req.query.param2;
+// Function to get the current UTC time with validation of +/-2 minutes
+function getCurrentUTC() {
+  const now = new Date();
+  const utcTime = now.toISOString().slice(0, -1) + "Z";
+  return utcTime;
+}
 
-  // Perform any necessary processing based on the parameters
-  // For this example, we'll just return them in a JSON object
+app.get("/api", (req, res) => {
+  const slackName = req.query.slack_name;
+  const track = req.query.track;
+
+  // Validate that both query parameters are provided
+  if (!slackName || !track) {
+    return res
+      .status(400)
+      .json({ error: "Both slack_name and track parameters are required." });
+  }
+
+  const currentDay = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+  });
+  const utcTime = getCurrentUTC();
+
+  // Replace these with your actual GitHub URLs
+  const githubFileURL = "https://github.com/xris003/taskOne/blob/main/app.js";
+  const githubRepoURL = "https://github.com/xris003/taskOne";
+
   const response = {
-    parameter1: param1,
-    parameter2: param2,
+    slack_name: slackName,
+    current_day: currentDay,
+    utc_time: utcTime,
+    track: track,
+    github_file_url: githubFileURL,
+    github_repo_url: githubRepoURL,
+    status_code: 200,
   };
 
-  // Send the JSON response
   res.json(response);
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });
