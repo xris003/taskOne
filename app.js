@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000; // Set the port to 3000 for localhost
+const PORT = process.env.PORT || 3000; // Set the port to 3000 for localhost
 
 // Function to get the current UTC time with validation of +/-2 minutes
 function getCurrentUTC() {
@@ -46,6 +46,6 @@ app.get("/", (req, res) => {
   res.send("Welcome to HNGx Page for Chris Gabriel");
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
