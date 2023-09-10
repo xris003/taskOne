@@ -42,6 +42,10 @@ app.get("/api", (req, res) => {
   res.json(response);
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to HNGx Page for Chris Gabriel");
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
