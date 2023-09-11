@@ -2,11 +2,9 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000; // Set the port to 3000 for localhost
 
-// Function to get the current UTC time with validation of +/-2 minutes
+// Function to get the current UTC time
 function getCurrentUTC() {
-  const now = new Date();
-  const utcTime = now.toISOString().slice(0, -1) + "Z";
-  return utcTime;
+  return moment().format("YYYY-MM-DDTHH:mm:ss[Z]");
 }
 
 app.get("/api", (req, res) => {
@@ -23,7 +21,7 @@ app.get("/api", (req, res) => {
   const currentDay = new Date().toLocaleDateString("en-US", {
     weekday: "long",
   });
-  const utcTime = new Date().toISOString();
+  const utcTime = getCurrentUTC();
 
   // Replace these with your actual GitHub URLs
   const githubFileURL = "https://github.com/xris003/taskOne/blob/main/app.js";
