@@ -23,7 +23,7 @@ app.get("/api", (req, res) => {
   const currentDay = new Date().toLocaleDateString("en-US", {
     weekday: "long",
   });
-  const utcTime = getCurrentUTC();
+  const utcTime = new Date().toISOString();
 
   // Replace these with your actual GitHub URLs
   const githubFileURL = "https://github.com/xris003/taskOne/blob/main/app.js";
@@ -32,7 +32,7 @@ app.get("/api", (req, res) => {
   const response = {
     slack_name: slackName,
     current_day: currentDay,
-    utc_time: utcTime,
+    utctime: utcTime,
     track: track,
     github_file_url: githubFileURL,
     github_repo_url: githubRepoURL,
