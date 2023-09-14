@@ -11,9 +11,8 @@ UML Diagrams:
 | Person |
 +-----------------------------------+
 | - \_id: ObjectId |
-| - name: String |
-| - age: Number |
-| - email: String |
+| - id: Nmber |
+| -name: String |
 +-----------------------------------+
 | + create(data: Object): Promise |
 | + findById(id: String): Promise |
