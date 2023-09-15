@@ -31,8 +31,7 @@ URL: /api
 
 Parameters:
 
-param1 (int, optional): id.
-param2 (string, required): name.
+param1 (string, required): name.
 
 Headers:
 
@@ -53,7 +52,7 @@ json
 "result": "Example result",
 "data": {
 "key1": "value1",
-"key2": "value2"
+
 }
 }
 Sample Usage
@@ -73,7 +72,6 @@ json
 "result": "Success",
 "data": {
 "key1": "result1",
-"key2": "result2"
 }
 }
 
@@ -90,8 +88,7 @@ Request Body:
 json
 
 {
-"property1": 42,
-"property2": "value1"
+"property1": "name1"
 }
 
 Response Format
@@ -122,8 +119,7 @@ Host: api.example.com
 Content-Type: application/json
 
 {
-"property1": 99,
-"property2": "sample"
+"property1": "sample"
 }
 
 Example Response:
