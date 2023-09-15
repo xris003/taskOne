@@ -18,7 +18,7 @@ exports.getPerson = (req, res, next) => {
 };
 
 exports.createPerson = [
-  // Use express-validator to validate 'id','name' fields
+  // Use express-validator to validate 'name' fields
   body("name").isString().withMessage("Invalid name"),
 
   (req, res, next) => {
