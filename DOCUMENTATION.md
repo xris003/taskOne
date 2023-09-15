@@ -51,10 +51,8 @@ json
 {
 "result": "Example result",
 "data": {
-"key1": "value1",
+"key1": "value1",}}
 
-}
-}
 Sample Usage
 Provide an example of how to use this endpoint, including example requests and expected responses.
 
