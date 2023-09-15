@@ -19,13 +19,29 @@ exports.getPerson = (req, res, next) => {
 
 exports.createPerson = [
   // Use express-validator to validate 'name' fields
-  body("name").isString().withMessage("Invalid name"),
+  body("name")
+    .isString()
+    .withMessage("Invalid name")
+    .custom(async (value) => {
+      // Check if the name already exists in the database
+      const existingPerson = await Person.findOne({ name: value });
+      if (existingPerson) {
+        throw new Error("Name already exists in the database");
+      }
+      // Return true to indicate the validation passed
+      return true;
+    })
+    .bail() // Stops running validations if previous validation fails
+    .notEmpty()
+    .withMessage("Please enter your name"),
 
   (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      // Handle validation errors
+      const errorMessages = errors.array().map((error) => error.msg);
+      return res.status(400).json({ errors: errorMessages });
     }
 
     // Validation passed; proceed with creating the person
