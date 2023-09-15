@@ -42,6 +42,8 @@ exports.createPerson = [
         });
       })
       .catch((error) => {
+        console.log(error);
+        console.log(error.message);
         res.status(400).json({
           message: "Data Creation Error",
         });
