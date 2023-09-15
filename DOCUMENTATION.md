@@ -51,7 +51,8 @@ json
 {
 "result": "Example result",
 "data": {
-"key1": "value1",}}
+"key1": "value1",}
+}
 
 Sample Usage
 Provide an example of how to use this endpoint, including example requests and expected responses.
@@ -75,11 +76,11 @@ json
 
 2.2. Endpoint 2
 Request Format
-Describe the request format for this endpoint.
+This endpoint obtains the details of a person.
 
 HTTP Method: GET
 
-URL: /api/user_id
+URL: /api/user_id/:id
 
 Request Body:
 
@@ -90,7 +91,6 @@ json
 }
 
 Response Format
-Describe the response format for this endpoint.
 
 HTTP Status Codes:
 
@@ -107,6 +107,37 @@ json
 }
 Sample Usage
 Provide an example of how to use this endpoint, including example requests and expected responses.
+
+Request Format
+This endpoint updates the details of a person.
+
+HTTP Method: PATCH
+
+URL: /api/user_id/:id
+
+Request Body:
+
+json
+
+{
+"property1": "updated name1"
+}
+
+Response Format
+Describe the response format for this endpoint.
+
+HTTP Status Codes:
+
+200 OK: success.
+400 Bad Request: Error Response.
+500 Internal Server Error: Server-side error.
+
+Response Body:
+json
+
+{
+"result": "Example result"
+}
 
 Example Request:
 
