@@ -19,7 +19,6 @@ exports.getPerson = (req, res, next) => {
 
 exports.createPerson = [
   // Use express-validator to validate 'id','name' fields
-  body("id").isInt().withMessage("ID must be a valid integer"),
   body("name").isString().withMessage("Invalid name"),
 
   (req, res, next) => {
@@ -31,7 +30,6 @@ exports.createPerson = [
 
     // Validation passed; proceed with creating the person
     const person = new Person({
-      id: req.body.id,
       name: req.body.name,
     });
 
@@ -55,7 +53,6 @@ exports.updatePerson = (req, res, next) => {
   let personID = req.body.personID;
 
   let updatedData = {
-    id: req.body.id,
     name: req.body.name,
   };
 
