@@ -22,7 +22,7 @@ API Documentation
    List the API endpoints that users can interact with. For each endpoint, provide details on request and response formats, along with sample usage.
 
 2.1. Endpoint 1
-Request Format
+*Request Format*
 Describe the required parameters, headers, and request body for this endpoint.
 
 HTTP Method: POST
@@ -75,7 +75,7 @@ json
 }
 
 2.2. Endpoint 2
-Request Format
+*Request Format*
 This endpoint obtains the details of a person.
 
 HTTP Method: GET
@@ -108,7 +108,7 @@ json
 Sample Usage
 Provide an example of how to use this endpoint, including example requests and expected responses.
 
-Request Format
+*Request Format*
 This endpoint updates the details of a person.
 
 HTTP Method: PATCH
@@ -139,6 +139,10 @@ json
 "result": "Example result"
 }
 
+*Request Format*
+This endpoint deletes the details of a person.
+
+HTTP Method: DELETE
 Example Request:
 
 http
