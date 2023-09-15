@@ -58,26 +58,24 @@ API Endpoints
 
 Endpoint: POST /api
 
-Request Body: JSON object with person details (name, age, email)
+Request Body: JSON object with person details (name)
 
 Example Request:
 
 json
 
 {
-"name": "John Doe",
-"age": 30,
-"email": "john@example.com"
+"name": "Michael"
 }
 
 **Get a person by ID**
 
-Endpoint: GET /api/:id
-Example Request: GET /api/5f7a0fb66f7a2f001c3bb0ca
+Endpoint: GET /api/user_id/:id
+Example Request: GET /api/65040b5037e60e9871fff842
 
 **Update a person by ID**
 
-Endpoint: PUT /api/user_id/:id
+Endpoint: PATCH /api/user_id/:id
 
 Request Body: JSON object with updated person details
 
@@ -86,9 +84,7 @@ Example Request:
 json
 
 {
-"name": "Updated Name",
-"age": 35,
-"email": "updated@example.com"
+"name": "Updated Name"
 }
 
 **Delete a person by ID**
