@@ -4,6 +4,7 @@ const personSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please enter your name"],
+    unique: [true, "Name already exists in the database"],
   },
 });
 
