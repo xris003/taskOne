@@ -49,6 +49,7 @@ exports.createPerson = [
       name: req.body.name,
     });
 
+    //  Returns the new dat stored to the database
     person
       .save()
       .then((response) => {
